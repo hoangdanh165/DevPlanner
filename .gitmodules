@@ -1,0 +1,12 @@
+[submodule "websocket"]
+	path = websocket
+	url = git@github.com:hoangdanh165/DevPlanner-WS.git
+	branch = main
+[submodule "backend"]
+	path = backend
+	url = git@github.com:hoangdanh165/DevPlanner-BE.git
+	branch = main
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:hoangdanh165/DevPlanner-FE.git
+	branch = main
