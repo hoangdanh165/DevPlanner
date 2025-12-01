@@ -49,7 +49,6 @@ Built with **Django**, **React**, **Celery**, **FastAPI**, and **Redis**, DevPla
 
 ### 🔌 Future Integrations
 
-- GitHub
 - Trello / Jira task export
 
 ---
@@ -63,16 +62,16 @@ flowchart LR
     Django[Django API]
     Celery[Celery Workers]
     Redis[Redis Queue + Cache]
-    FastAPI[FastAPI WebSocket Relay]
+    FastAPI[FastAPI WebSocket]
     DB[(PostgreSQL)]
 
-    User --> Nuxt
+    User --> React
     React --> Django
     Django --> DB
     Django --> Celery
     Celery --> Redis
     Django --> FastAPI
-    FastAPI --> Nuxt
+    FastAPI --> React
 ```
 
 ---
@@ -98,8 +97,8 @@ Docker + Docker Compose (Recommended)
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourname/devplanner.git
-cd devplanner
+git clone https://github.com/hoangdanh165/DevPlanner-Deployment.git
+cd devplanner-deployment
 ```
 
 ### 2️⃣ Backend Setup (Django)
@@ -112,7 +111,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-### 3️⃣ Frontend Setup (Nuxt 3)
+### 3️⃣ Frontend Setup (React)
 
 ```bash
 cd frontend
@@ -123,16 +122,15 @@ npm run dev
 ### 4️⃣ WebSocket Server (FastAPI)
 
 ```bash
-cd websocket-relay
+cd websocket
 pip install -r requirements.txt
-uvicorn main:app --reload --port 8001
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
 
 ### 5️⃣ Celery Worker
 
 ```bash
-celery -A backend worker -l INFO
-celery -A backend beat -l INFO
+celery -A backend worker -l INFO -P solo
 ```
 
 ### 🐳 Run with Docker (Recommended)
