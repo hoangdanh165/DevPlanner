@@ -48,7 +48,7 @@ Built with **Django**, **React**, **Celery**, **FastAPI**, and **Redis**, DevPla
 - Long-running generation streaming updates through FastAPI WebSocket Server
 - PostgreSQL with rich relational schema
 
-### 🖥️ Frontend (Nuxt 3 / React UI)
+### 🖥️ Frontend (React)
 
 - Clean, responsive UI
 - Realtime progress streaming for AI generation
