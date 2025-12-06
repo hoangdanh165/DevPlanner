@@ -19,7 +19,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ../nginx/nginx.dev.conf:/etc/nginx/nginx.conf:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - ../nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
     networks:
       - app-network
 
